@@ -24,6 +24,7 @@ in
     bat
     cargo
     clang
+    cmake
     gcc
     jq
     k9s
@@ -54,6 +55,7 @@ in
   };
 
   imports = [
+    ./font.nix
     ./go.nix
     ./git.nix
     ./neovim.nix
