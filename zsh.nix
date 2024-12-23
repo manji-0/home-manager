@@ -20,6 +20,7 @@
       ls = "ls --color=auto ";
       ll = "ls -la ";
       terraform = "tofu ";
+      k = "kubectl";
       gs = "git status";
       gc = "git commit";
       gp = "git push";

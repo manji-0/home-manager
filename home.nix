@@ -26,6 +26,7 @@ in
     clang
     gcc
     jq
+    k9s
     kubectl
     kubectl-neat
     kubectl-tree
@@ -33,6 +34,7 @@ in
     opentofu
     ripgrep
     rustc
+    stern
     wget
     yq
   ] ++ (if stdenv.isLinux then [
