@@ -26,6 +26,10 @@ in
     clang
     gcc
     jq
+    kubectl
+    kubectl-neat
+    kubectl-tree
+    kubectx
     opentofu
     ripgrep
     rustc
