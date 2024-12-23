@@ -50,10 +50,7 @@ in
   # Conditional settings based on the operating system
   home.sessionVariables = {
     LANG = "en_US.UTF-8";
-  } // mkIf (stdenv.isLinux) {
     XDG_CONFIG_HOME = "$HOME/.config";
-  } // mkIf (stdenv.isDarwin) {
-    XDG_CONFIG_HOME = "$HOME/Library/Preferences";
   };
 
   imports = [
