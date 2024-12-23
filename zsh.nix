@@ -14,6 +14,17 @@
     enable = true;
     enableCompletion = true;
     oh-my-zsh.enable = false;
+    shellAliases = {
+      vim = "nvim";
+      vi = "nvim";
+      ls = "ls --color=auto ";
+      ll = "ls -la ";
+      terraform = "tofu ";
+      gs = "git status";
+      gc = "git commit";
+      gp = "git push";
+      sudo = "sudo ";
+    };
     initExtra = ''
         eval "$(starship init zsh)"
     '';

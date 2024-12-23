@@ -26,26 +26,20 @@ in
     clang
     gcc
     jq
-    make
+    opentofu
     ripgrep
     rustc
+    wget
     yq
   ] ++ (if stdenv.isLinux then [
     # Add your Linux packages here
+    make
   ] else if stdenv.isDarwin then [
     # Add your macOS packages here
     iterm2
     slack
     brave
   ] else []);
-
-  # Example of setting up a program configuration
-  #programs.zsh = {
-  #  enable = true;
-  #  initExtra = ''
-  #      eval "$(starship init zsh)"
-  #  '';
-  #};
 
   # Conditional settings based on the operating system
   home.sessionVariables = {
@@ -59,12 +53,5 @@ in
     ./neovim.nix
     ./python.nix
     ./zsh.nix
-  ] ++ (if stdenv.isLinux then [
-    # Add Linux only imports here
-  ] else if stdenv.isDarwin then [
-    # Add MacOS only imports here
-    ./brew.nix
-  ] else []);
-
-
+  ]; 
 }

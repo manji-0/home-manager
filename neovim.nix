@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
+    neovim
     nodejs
     ruby
   ];
@@ -75,7 +76,7 @@
         config = function()
           require("mason").setup()
           require("mason-lspconfig").setup({
-            ensure_installed = { "pylight", "lua_ls", "gopls" }
+            ensure_installed = { "ruff", "lua_ls", "gopls", "marksman" }
           })
 
           local lspconfig = require("lspconfig")
@@ -127,7 +128,7 @@
         config = function()
           require("lualine").setup({
             options = {
-              theme = "tokyonight",
+              theme = "palenight",
             },
           })
         end,
