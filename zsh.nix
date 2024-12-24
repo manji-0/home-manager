@@ -19,7 +19,7 @@
       vi = "nvim";
       ls = "ls --color=auto ";
       ll = "ls -la ";
-      terraform = "tofu ";
+      terraform = "tofu";
       k = "kubectl";
       gs = "git status";
       gc = "git commit";
@@ -28,6 +28,7 @@
     };
     initExtra = ''
         eval "$(starship init zsh)"
+        eval "$(gh completion -s zsh)"
     '';
   };
 }

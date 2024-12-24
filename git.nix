@@ -17,11 +17,26 @@ in
       "manji@linux.com"
     else
       "wataru.manji@lycorp.co.jp";
+    lfs.enable = true;
     aliases = {
         st = "status";
         ci = "commit";
         sw = "switch";
     };
     extraConfig.pull.rebase = true;
+  };
+
+  programs.gh = {
+    enable = true;
+    settings = {
+      git_protocol = "https";
+      prompt = "enabled";
+      editor = "nvim";
+      pager = "nvimpager";
+      aliases = {
+        co = "pr checkout";
+        pv = "pr view";
+      };
+    };
   };
 }

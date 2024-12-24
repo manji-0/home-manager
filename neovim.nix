@@ -2,8 +2,11 @@
 {
   home.packages = with pkgs; [
     neovim
+    nvimpager
     nodejs
     ruby
+    terraform-ls
+    tflint
   ];
 
   programs.neovim = {
@@ -17,7 +20,21 @@
     withRuby = true;
   };
 
+  home.sessionVariables = {
+    PAGER = "nvimpager";
+    MANPAGER = "nvimpager";
+  };
+
   home.file.".config/nvim/init.lua".text = ''
+    vim.opt.autoindent = true
+    vim.opt.smartindent = true
+    vim.opt.tabstop = 2
+    vim.opt.shiftwidth = 2
+    vim.opt.expandtab = true
+    vim.opt.splitright = true
+    vim.opt.clipboard = "unnamedplus"
+    vim.opt.hls = true
+
     local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
     if not vim.loop.fs_stat(lazypath) then
@@ -76,7 +93,14 @@
         config = function()
           require("mason").setup()
           require("mason-lspconfig").setup({
-            ensure_installed = { "ruff", "lua_ls", "gopls", "marksman" }
+            ensure_installed = {
+              "ruff",
+              "lua_ls",
+              "gopls",
+              "marksman",
+              "tflint",
+              "terraformls",
+              },
           })
 
           local lspconfig = require("lspconfig")
@@ -128,10 +152,18 @@
         config = function()
           require("lualine").setup({
             options = {
+	            icons_enabled = true,
               theme = "palenight",
+    	        component_separators = { left = '', right = ''},
+              section_separators = { left = '', right = ''},
+	            always_divide_middle = true,
+	            globalstatus = false,
             },
           })
         end,
+      },
+      {
+        "github/copilot.vim",
       },
     }
   '';
