@@ -31,6 +31,7 @@ in
     conftest
     fontforge
     gcc
+    gnutls
     jsonnet
     jq
     k9s
@@ -51,16 +52,20 @@ in
     open-policy-agent
     opentofu
     # pinentry
+    protobuf
     reviewdog
     ripgrep
     rustc
     rustfmt
     s3cmd
     shfmt
+    sqlite
     stern
     wget
+    xz
     yamlfmt
     yq
+    zstd
   ] ++ (if stdenv.isLinux then [
     # Add your Linux packages here
     make

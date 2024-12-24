@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... }:
 {
   home.packages = with pkgs; [
+    shellcheck
     starship
     zsh-completions
   ];
