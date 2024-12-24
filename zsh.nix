@@ -2,6 +2,7 @@
 {
   home.packages = with pkgs; [
     starship
+    zsh-completions
   ];
 
   programs.zsh = {
@@ -17,6 +18,7 @@
     shellAliases = {
       vim = "nvim";
       vi = "nvim";
+      less = "nvimpager";
       ls = "ls --color=auto ";
       ll = "ls -la ";
       terraform = "tofu";

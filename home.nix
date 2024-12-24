@@ -26,12 +26,15 @@ in
     clang
     cmake
     gcc
+    jsonnet
     jq
     k9s
     kubectl
     kubectl-neat
     kubectl-tree
     kubectx
+    kubernetes-helm
+    kustomize
     opentofu
     ripgrep
     rustc
@@ -52,6 +55,7 @@ in
   home.sessionVariables = {
     LANG = "en_US.UTF-8";
     XDG_CONFIG_HOME = "$HOME/.config";
+    NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM = "1";
   };
 
   imports = [
