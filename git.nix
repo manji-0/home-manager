@@ -5,6 +5,9 @@ let
 in
 {
   home.packages = with pkgs; [
+    act
+    actionlint
+    action-validator
     gh
     git
     gnupg

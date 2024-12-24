@@ -20,6 +20,7 @@ in
 
   # Define your packages and configurations here
   home.packages = with pkgs; [
+    _1password-cli
     argocd
     awscli
     bash
@@ -47,6 +48,7 @@ in
     nodePackages.yarn
     openssl
     openssh
+    open-policy-agent
     opentofu
     # pinentry
     reviewdog
@@ -62,6 +64,8 @@ in
   ] ++ (if stdenv.isLinux then [
     # Add your Linux packages here
     make
+    multipass
+    pinentry
   ] else if stdenv.isDarwin then [
     # Add your macOS packages here
     iterm2
