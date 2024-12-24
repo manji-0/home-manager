@@ -9,6 +9,7 @@ in
     actionlint
     action-validator
     gh
+    gibo
     git
     gnupg
   ];

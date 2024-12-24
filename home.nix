@@ -42,6 +42,8 @@ in
     kubernetes-helm
     kubeseal
     kustomize
+    ldns
+    lnav
     nodePackages.markdownlint-cli2
     nodePackages.npm
     nodePackages.prettier
