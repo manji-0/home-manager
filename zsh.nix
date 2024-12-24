@@ -26,6 +26,7 @@
       gs = "git status";
       gc = "git commit";
       gp = "git push";
+      python = "/Users/manji0/.nix-profile/bin/python";
       sudo = "sudo ";
     };
     initExtra = ''

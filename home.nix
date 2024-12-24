@@ -20,11 +20,15 @@ in
 
   # Define your packages and configurations here
   home.packages = with pkgs; [
+    argocd
+    awscli
     bash
     bat
     cargo
     clang
     cmake
+    conftest
+    fontforge
     gcc
     jsonnet
     jq
@@ -34,12 +38,26 @@ in
     kubectl-tree
     kubectx
     kubernetes-helm
+    kubeseal
     kustomize
+    nodePackages.markdownlint-cli2
+    nodePackages.npm
+    nodePackages.prettier
+    nodePackages.typescript
+    nodePackages.yarn
+    openssl
+    openssh
     opentofu
+    # pinentry
+    reviewdog
     ripgrep
     rustc
+    rustfmt
+    s3cmd
+    shfmt
     stern
     wget
+    yamlfmt
     yq
   ] ++ (if stdenv.isLinux then [
     # Add your Linux packages here
@@ -49,6 +67,7 @@ in
     iterm2
     slack
     brave
+    yubikey-manager
   ] else []);
 
   # Conditional settings based on the operating system
@@ -57,6 +76,7 @@ in
     XDG_CONFIG_HOME = "$HOME/.config";
     NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM = "1";
     NIXPKGS_ALLOW_UNFREE = "1";
+    NIXPKGS_ALLOW_INSECURE = "1";
   };
 
   imports = [

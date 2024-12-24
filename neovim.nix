@@ -3,7 +3,6 @@
   home.packages = with pkgs; [
     neovim
     nvimpager
-    nodejs
     ruby
     terraform-ls
     tflint
