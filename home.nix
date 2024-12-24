@@ -56,6 +56,7 @@ in
     LANG = "en_US.UTF-8";
     XDG_CONFIG_HOME = "$HOME/.config";
     NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM = "1";
+    NIXPKGS_ALLOW_UNFREE = "1";
   };
 
   imports = [
