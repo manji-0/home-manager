@@ -70,8 +70,6 @@ in
     zstd
   ] ++ (if stdenv.isLinux then [
     # Add your Linux packages here
-    make
-    multipass
     pinentry
   ] else if stdenv.isDarwin then [
     # Add your macOS packages here
@@ -89,6 +87,13 @@ in
     NIXPKGS_ALLOW_UNFREE = "1";
     NIXPKGS_ALLOW_INSECURE = "1";
   };
+
+  home.sessionPath = [
+    "$HOME/.yarn/bin"
+    "$HOME/.cargo/bin"
+    "$HOME/.local/bin"
+    "$HOME/.npm/bin"
+  ];
 
   imports = [
     ./font.nix

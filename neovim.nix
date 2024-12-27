@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     neovim
     nvimpager
+    pyright
     ruby
     terraform-ls
     tflint
@@ -104,7 +105,17 @@
 
           local lspconfig = require("lspconfig")
 
-          lspconfig.pyright.setup({})
+          lspconfig.pyright.setup({
+            settings = {
+              python = {
+                venvPath = ".",
+                pythonPath = ".venv/bin/python",
+                analysis = {
+                  typeCheckingMode = "basic",
+                },
+              },
+            },
+          })
           lspconfig.lua_ls.setup({
             settings = {
               Lua = {
