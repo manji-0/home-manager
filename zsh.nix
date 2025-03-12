@@ -33,6 +33,7 @@
     initExtra = ''
         eval "$(starship init zsh)"
         eval "$(gh completion -s zsh)"
+        zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
     '';
   };
 }
