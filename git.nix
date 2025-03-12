@@ -28,6 +28,8 @@ in
         sw = "switch";
     };
     extraConfig.pull.rebase = true;
+    extraConfig.init.defaultBranch = "main";
+    extraConfig.push.default = "current";
   };
 
   programs.gh = {
