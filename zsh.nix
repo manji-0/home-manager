@@ -17,6 +17,9 @@
     enableCompletion = true;
     oh-my-zsh.enable = false;
     shellAliases = {
+      http = "noglob http ";
+      https = "noglob https ";
+      curl = "noglob curl ";
       vim = "nvim";
       vi = "nvim";
       less = "nvimpager";
@@ -34,6 +37,7 @@
         eval "$(starship init zsh)"
         eval "$(gh completion -s zsh)"
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+        WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
     '';
   };
 }

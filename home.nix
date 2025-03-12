@@ -32,6 +32,7 @@ in
     fontforge
     gcc
     gnutls
+    httpie
     jsonnet
     jq
     k9s
